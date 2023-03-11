@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <main>
+        <h1>CSS Bayan</h1>
+        <div class="divider"></div>
+        <div class="accordion">
+            <div class="accordion-item">
+                <input type="radio" id="item1" name="item" checked>
+                <label for="item1">
+                    <h2 class="content">You can’t just copy and paste CSS</h2>
+                </label>
+                <picture>
+                    <source srcset="./assets/img/mobile/meme-small-1.jpg" media="(max-width: 819px)">
+                    <source srcset="./assets/img/tablet-and-desktop/meme-big-1.jpg" media="(max-width: 3000px)">
+                    <img class="picture" src="assets/img/tablet-and-desktop/meme-big-1.jpg" alt="meme">
+                </picture>
+            </div>
+
+            <div class="accordion-item">
+                <input type="radio" id="item2" name="item">
+                <label for="item2">
+                    <h2 class="content">Keep calm and carry on</h2>
+                </label>
+                <picture>
+                    <source srcset="./assets/img/mobile/meme-small-2.jpg" media="(max-width: 819px)">
+                    <source srcset="./assets/img/tablet-and-desktop/meme-big-2.jpg" media="(max-width: 3000px)">
+                    <img class="picture" src="assets/img/tablet-and-desktop/meme-big-2.jpg" alt="meme">
+                </picture>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

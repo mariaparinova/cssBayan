@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;1,100&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #F6F6EC;
+    --font-color-main: #2D2D25;
+    --font-color-akzent: #0059D9;
+    --border-color: #DFE4E5;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 820px;
+    min-height: 100vh;
+    padding: 24px 32px;
+    margin: auto;
+    background-color: var(--bg-color);
+}
+
+h1 {
+    font-family: 'Roboto', "Open Sans", serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    color: var(--font-color-main);
+}
+
+h2 {
+    font-family: 'Roboto', "Open Sans", serif;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+    color: var(--font-color-main);
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    margin-top: 12px;
+    background-color: var(--border-color);
+}
+
+.accordion-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.accordion-item input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.accordion-item label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.accordion-item h2.content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.content::after {
+    content: url("");
+}
+
+.picture {
+    display: none;
+}
+
+input:checked + label{
+}
+
+input:checked + label > h2::after{
+    transform: rotate(90deg);
+}
+
+input:checked + label + picture > .picture{
+    display: block;
+}
+
+
+
