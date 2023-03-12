@@ -74,57 +74,49 @@ h2 {
         cursor: pointer;
     }
 
+    .accordion .divider:hover {
+        cursor: pointer;
+    }
+
     .accordion:hover *:not(:checked) {
         color: var(--font-color-main);
     }
 
-    .accordion-item:hover object {
+    .accordion:hover .icon{
+        display: block;
+    }
+
+    .accordion-item:hover .icon{
         transform: rotate(45deg);
     }
 
-    .accordion input:checked + label object {
+    .accordion input:checked + label .icon {
+        display: block;
         transform: rotate(45deg);
     }
 
-    .accordion object {
+    .accordion .icon {
         transition: all 0.4s;
     }
+
 
     .accordion-item:hover .accordion-img {
         height: var(--picture-height);
     }
 }
 
-@media screen and (max-width: 1919px) {
-    .accordion input:checked + label object{
-        transform: rotate(45deg);
-    }
+.accordion-item {
+    margin-top:var(--margin-top);
 }
 
-.accordion-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top:var(--margin-top);
+main .accordion .accordion-item:active * {
+    color: #3370C7;
 }
 
 .accordion-item input {
     position: absolute;
-    /*z-index: -1;*/
-    opacity: 0;
-}
-
-.accordion-item input:checked {
-    position: absolute;
     z-index: -1;
     opacity: 0;
-}
-
-.accordion-item label {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
 }
 
 .accordion-item .content {
@@ -133,21 +125,18 @@ h2 {
     width: 100%;
 }
 
-@media screen and (max-width: 1919px) {
-    .accordion object {
-        transition: all 0.4s;
-    }
+.accordion h2 {
+    flex-grow: 1;
 }
 
-@media screen and (max-width: 819px) {
-    .accordion object {
-        height: 1em;
-    }
+.accordion .icon {
+    display: none;
 }
 
 .accordion-img {
+    display: flex;
+    margin: var(--margin-top) auto 0;
     height: 0;
-    margin-top: var(--margin-top);
     transition: all 0.4s;
 }
 
