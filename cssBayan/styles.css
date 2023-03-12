@@ -91,7 +91,6 @@ h2 {
     }
 
     .accordion input:checked + label .icon {
-        display: block;
         transform: rotate(45deg);
     }
 
@@ -129,7 +128,7 @@ main .accordion .accordion-item:active * {
     flex-grow: 1;
 }
 
-.accordion .icon {
+main .accordion .icon {
     display: none;
 }
 
@@ -140,7 +139,7 @@ main .accordion .accordion-item:active * {
     transition: all 0.4s;
 }
 
-.accordion input:checked + label *{
+.accordion input:checked + h2 *{
     color: var(--font-color-main);
 }
 
