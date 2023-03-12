@@ -9,7 +9,7 @@
 :root {
     --bg-color: #F6F6EC;
     --font-color-main: #2D2D25;
-    --font-color-akzent: #0059D9;
+    --font-color-accent: #0059D9;
     --border-color: #DFE4E5;
     --margin-top: 0.75rem;
     --picture-height: 24rem;
@@ -31,23 +31,23 @@
         --h1-font-size: 1.5em;
         --h2-font-size: 1em;
         --picture-height: 12rem;
-        --main-width: var(--main-width);
+        --main-width: auto;
         --main-padding: 0.7rem;
     }
 }
 
+body {
+    font-family: 'Roboto', "Open Sans", serif;
+}
+
 main {
-    display: flex;
-    flex-direction: column;
     width: var(--main-width);
-    min-height: 100vh;
     padding: var(--main-padding);
     margin: auto;
     background-color: var(--bg-color);
 }
 
 h1 {
-    font-family: 'Roboto', "Open Sans", serif;
     font-weight: 700;
     font-size: var(--h1-font-size);
     line-height: 100%;
@@ -55,15 +55,13 @@ h1 {
 }
 
 h2 {
-    font-family: 'Roboto', "Open Sans", serif;
     font-weight: 500;
     font-size: var(--h2-font-size);
     line-height: 100%;
-    color: var(--font-color-akzent);
+    color: var(--font-color-accent);
 }
 
 .divider {
-    width: 100%;
     height: 0.1rem;
     margin-top: var(--margin-top);
     background-color: var(--border-color);
@@ -82,14 +80,11 @@ h2 {
         color: var(--font-color-main);
     }
 
-    .accordion:hover .icon{
+    .accordion:hover .icon {
         display: block;
     }
 
-    .accordion-item:hover .icon{
-        transform: rotate(45deg);
-    }
-
+    .accordion-item:hover .icon,
     .accordion input:checked + label .icon {
         transform: rotate(45deg);
     }
@@ -105,17 +100,15 @@ h2 {
 }
 
 .accordion-item {
-    margin-top:var(--margin-top);
+    margin-top: var(--margin-top);
 }
 
-main .accordion .accordion-item:active * {
+.accordion .accordion-item:active * {
     color: #3370C7;
 }
 
 .accordion-item input {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
+    display: none;
 }
 
 .accordion-item .content {
@@ -125,25 +118,21 @@ main .accordion .accordion-item:active * {
     width: 100%;
 }
 
-.accordion h2 {
-    flex-grow: 1;
-}
-
-main .accordion .icon {
+.accordion .icon {
     display: none;
 }
 
 .accordion-img {
-    display: flex;
+    display: block;
     margin: var(--margin-top) auto 0;
     height: 0;
     transition: all 0.4s;
 }
 
-.accordion input:checked + label *{
+.accordion input:checked + label * {
     color: var(--font-color-main);
 }
 
-input:checked + label .accordion-img{
+input:checked + label .accordion-img {
     height: var(--picture-height);
 }
