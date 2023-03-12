@@ -12,15 +12,36 @@
     --font-color-akzent: #0059D9;
     --border-color: #DFE4E5;
     --margin-top: 0.75rem;
+    --picture-height: 24rem;
+    --h1-font-size: 3em;
+    --h2-font-size: 2em;
+    --main-width: 51rem;
+    --main-padding: 2rem;
+}
+
+@media screen and (max-width: 1919px) {
+    :root {
+        --h1-font-size: 2em;
+        --h2-font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 819px) {
+    :root {
+        --h1-font-size: 1.5em;
+        --h2-font-size: 1em;
+        --picture-height: 12rem;
+        --main-width: var(--main-width);
+        --main-padding: 0.7rem;
+    }
 }
 
 main {
     display: flex;
     flex-direction: column;
-    /*width: 820px;*/
-    width: 51rem;
+    width: var(--main-width);
     min-height: 100vh;
-    padding: 1.5rem 2rem;
+    padding: var(--main-padding);
     margin: auto;
     background-color: var(--bg-color);
 }
@@ -28,7 +49,7 @@ main {
 h1 {
     font-family: 'Roboto', "Open Sans", serif;
     font-weight: 700;
-    font-size: 3em;
+    font-size: var(--h1-font-size);
     line-height: 100%;
     color: var(--font-color-main);
 }
@@ -36,7 +57,7 @@ h1 {
 h2 {
     font-family: 'Roboto', "Open Sans", serif;
     font-weight: 500;
-    font-size: 2em;
+    font-size: var(--h2-font-size);
     line-height: 100%;
     color: var(--font-color-akzent);
 }
@@ -62,12 +83,22 @@ h2 {
     }
 
     .accordion-item:hover .picture{
-        height: 31rem;
+        height: var(--picture-height);
     }
 
     .accordion:hover .content::after {
         content: url("./assets/icons/tablet-and-desktop/icon_big_cross.svg");
         transition: all 0.4s;
+    }
+
+    .accordion:hover input:checked + label > .content::after{
+        transform: rotate(45deg);
+    }
+}
+
+@media screen and (max-width: 1919px) {
+    .accordion input:checked + label > .content::after{
+        transform: rotate(45deg);
     }
 }
 
@@ -80,7 +111,7 @@ h2 {
 
 .accordion-item input {
     position: absolute;
-    z-index: -1;
+    /*z-index: -1;*/
     opacity: 0;
 }
 
@@ -110,6 +141,13 @@ h2 {
     }
 }
 
+@media screen and (max-width: 819px) {
+    .accordion .content::after {
+        content: url("./assets/icons/mobile/icon_small_cross.svg");
+        transition: all 0.4s;
+    }
+}
+
 .picture {
     height: 0;
     margin-top: var(--margin-top);
@@ -120,11 +158,6 @@ h2 {
     color: var(--font-color-main);
 }
 
-.accordion:hover input:checked + label > .content::after{
-    transform: rotate(45deg);
-}
-
 input:checked + label + picture > .picture{
-    /*height: 100%;*/
-    height: 31rem;
+    height: var(--picture-height);
 }
