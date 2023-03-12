@@ -139,7 +139,7 @@ main .accordion .icon {
     transition: all 0.4s;
 }
 
-.accordion input:checked + h2 *{
+.accordion input:checked + label *{
     color: var(--font-color-main);
 }
 
