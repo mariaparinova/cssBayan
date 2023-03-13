@@ -67,6 +67,14 @@ h2 {
     background-color: var(--border-color);
 }
 
+.accordion .icon {
+    transition: all 0.4s;
+}
+
+.accordion input:checked + label .icon {
+    transform: rotate(45deg);
+}
+
 @media screen and (min-width: 1920px) {
     .accordion *:hover {
         cursor: pointer;
@@ -84,15 +92,9 @@ h2 {
         display: block;
     }
 
-    .accordion-item:hover .icon,
-    .accordion input:checked + label .icon {
+    .accordion-item:hover .icon {
         transform: rotate(45deg);
     }
-
-    .accordion .icon {
-        transition: all 0.4s;
-    }
-
 
     .accordion-item:hover .accordion-img {
         height: var(--picture-height);
@@ -120,6 +122,12 @@ h2 {
 
 .accordion .icon {
     display: none;
+}
+
+@media screen and (max-width: 1919px) {
+    .accordion .icon {
+        display: block;
+    }
 }
 
 .accordion-img {
